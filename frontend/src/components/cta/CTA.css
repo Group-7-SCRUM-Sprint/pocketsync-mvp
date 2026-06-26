@@ -1,0 +1,144 @@
+.cta {
+    width: 100%;
+    padding: 96px 0;
+    background: #ffffff;
+}
+
+.cta__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 96px 80px;
+
+    background: #061B38;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta__title {
+    margin: 0;
+
+    color: #FFFFFF;
+    font-family: "DM Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.cta__description {
+    max-width: 700px;
+
+    margin: 24px 0 48px;
+
+    color: rgba(255,255,255,.75);
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.cta__actions {
+    display: flex;
+    gap: 16px;
+}
+
+.cta__actions .button {
+    width: auto;
+}
+
+.cta__secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 28px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.cta__secondary-btn:hover {
+    background: rgba(255,255,255,.15);
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:1024px){
+
+    .cta{
+        padding:72px 0;
+    }
+
+    .cta__container{
+        margin:0 40px;
+        padding:72px 48px;
+    }
+
+    .cta__title{
+        font-size:40px;
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .cta{
+        padding:60px 0;
+    }
+
+    .cta__container{
+        margin:0 20px;
+        padding:48px 24px;
+    }
+
+    .cta__title{
+        font-size:32px;
+    }
+
+    .cta__description{
+        font-size:16px;
+        margin:20px 0 32px;
+    }
+
+    .cta__actions{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .cta__actions .button,
+    .cta__secondary-btn{
+        width:100%;
+    }
+
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:480px){
+
+    .cta__container{
+        margin:0 16px;
+        padding:40px 20px;
+    }
+
+    .cta__title{
+        font-size:28px;
+    }
+
+}
