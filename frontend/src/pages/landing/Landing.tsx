@@ -1,6 +1,7 @@
 import "./Landing.css";
 
 import Navbar from "../../components/navbar/Navbar";
+import Hero from "../../components/hero/Hero";
 
 export default function Landing() {
   return (
@@ -8,7 +9,7 @@ export default function Landing() {
       <Navbar />
 
       <main className="landing-page">
-        <h1>Landing Page</h1>
+        <Hero />
       </main>
     </>
   );

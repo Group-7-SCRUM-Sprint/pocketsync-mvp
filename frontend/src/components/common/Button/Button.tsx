@@ -15,7 +15,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`btn btn-${variant} ${className}`}
+      className={`button button--${variant} ${className}`}
       disabled={loading || props.disabled}
       {...props}
     >

@@ -1,0 +1,276 @@
+.hero {
+  width: 100%;
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.hero__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.hero__content {
+    flex: 1;
+    display: flex;
+    width: 613.125px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.hero__badge {
+    display: flex;
+    padding: 6.75px 18px;
+    align-items: center;
+    gap: 11.25px;
+
+    width: fit-content;
+    border-radius: 11248.875px;
+    background: #0A2540;
+
+    color: #D2E4FF;
+    font-size: 12.375px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18.563px; /* 150% */
+    border-radius: 999px;
+
+    margin-bottom: 24px;
+}
+
+.hero__title {
+    color: #000F22;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.08px;
+}
+
+.hero__title span {
+    color: #3454F5;
+}
+
+.hero__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #6b7280;
+
+  margin-bottom: 40px;
+}
+
+.hero__actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.hero__actions .button{
+    width:auto;
+}
+
+.hero__secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 28px;
+
+    border-radius:12px;
+    border:1px solid #D9D9D9;
+
+    background:#fff;
+
+    font-family:"DM Sans",sans-serif;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.hero__secondary-btn:hover{
+    background:#F8FAFC;
+}
+
+.hero__image {
+    flex: 1;
+    display: flex;
+    width: 579.375px;
+    height: 540px;
+}
+
+.hero__image img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.floating-card {
+    width: fit-content;
+    border-radius: 11.793px;
+    background: white;
+    box-shadow: 0 19.654px 24.568px -4.914px rgba(0, 0, 0, 0.10), 0 7.862px 9.827px -5.896px rgba(0, 0, 0, 0.10);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    z-index: 5;
+}
+
+.floating-card img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.floating-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+
+    margin-bottom: 4px;
+}
+
+.floating-card p {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.floating-card--top {
+    top: 160px;
+    left: 640px;
+}
+
+.floating-card--bottom {
+    bottom: 40px;
+    right: 40px;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero__container {
+        padding: 0 40px;
+        gap: 48px;
+    }
+
+    .hero__title {
+        font-size: 38px;
+    }
+
+    .hero__description {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero__container {
+        flex-direction: column;
+        padding: 0 16px;
+        gap: 48px;
+    }
+
+    .hero__content {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero__image {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .hero__image img {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .hero__title {
+        font-size: 32px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .hero__description {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Buttons */
+
+    .hero__actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero__actions .button,
+    .hero__secondary-btn {
+        width: 100%;
+    }
+
+    .floating-card img {
+        border-radius: 4px;
+        object-fit: contain;
+    }
+
+    .floating-card--top {
+        top: 540px;
+        left: -12px;
+    }
+
+    .floating-card--bottom {
+        bottom: -200px;
+        right: -12px;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .hero__container {
+        padding: 0 20px;
+    }
+
+    .hero__title {
+        font-size: 28px;
+    }
+
+    .hero__badge {
+        font-size: 11px;
+    }
+
+    .floating-card {
+        transform: scale(.8);
+        transform-origin: center;
+    }
+
+}

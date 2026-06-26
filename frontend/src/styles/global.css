@@ -1,5 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  background: var(--gray-50);
+    font-family: "DM Sans", sans-serif;
+    background: var(--gray-50);
+    color: #111827;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
 button {
