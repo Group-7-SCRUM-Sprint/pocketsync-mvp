@@ -1,23 +1,33 @@
+import "./Input.css";
 import type { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  error?: string;
 }
 
 export default function Input({
   label,
+  error,
+  className = "",
   ...props
 }: InputProps) {
   return (
-    <div className="space-y-2">
-      <label className="block text-sm font-medium">
+    <div className="input-group">
+      <label className="input-label">
         {label}
       </label>
 
       <input
-        className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-600"
+        className={`input-field ${error ? "input-error" : ""} ${className}`}
         {...props}
       />
+
+      {error && (
+        <p className="input-error-text">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
