@@ -1,0 +1,17 @@
+:root {
+    --font-family: "DM Sans", sans-serif;
+
+    --color-primary: #3454F5;
+    --color-text: #111827;
+    --color-text-secondary: #6B7280;
+
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 80px;
+}

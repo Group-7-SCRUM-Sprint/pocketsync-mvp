@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  padding: 16px 28px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary */
+.button--primary {
+  background: #3454F5;
+  color: #FFFFFF;
+}
+
+.button--primary:hover {
+  background: #2646EB;
+}
+
+/* Secondary */
+.button--secondary {
+  background: #EEF2FF;
+  color: #3454F5;
+}
+
+.button--secondary:hover {
+  background: #E0E7FF;
+}
+
+/* Outline */
+.button--outline {
+  background: transparent;
+  border: 1px solid #D1D5DB;
+  color: #111827;
+}
+
+.button--outline:hover {
+  background: #F9FAFB;
+}
+
+/* Danger */
+.button--danger {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.button--danger:hover {
+  background: #B91C1C;
+}
+
+/* Disabled */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

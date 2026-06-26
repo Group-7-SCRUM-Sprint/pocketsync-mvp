@@ -1,3 +1,16 @@
+import "./Landing.css";
+
+import Navbar from "../../components/navbar/Navbar";
+import Hero from "../../components/hero/Hero";
+
 export default function Landing() {
-  return <h1>Landing Page</h1>;
+  return (
+    <>
+      <Navbar />
+
+      <main className="landing-page">
+        <Hero />
+      </main>
+    </>
+  );
 }
