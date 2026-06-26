@@ -1,0 +1,16 @@
+body {
+  background: var(--gray-50);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}

@@ -4,7 +4,7 @@ import PublicLayout from "../layouts/PublicLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import ProtectedLayout from "../layouts/ProtectedLayout";
 
-import Landing from "../pages/landing/landing";
+import Landing from "../pages/landing/Landing";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import Dashboard from "../pages/dashboard/Dashboard";
