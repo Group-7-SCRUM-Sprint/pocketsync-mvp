@@ -1,0 +1,258 @@
+.about {
+  width: 100%;
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+
+.about__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.about__content {
+    flex: 1;
+    display: flex;
+    width: 613.125px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.about__title {
+    color: #000F22;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.08px;
+}
+
+.about__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #6b7280;
+
+  margin-bottom: 40px;
+}
+
+.about__actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.about__actions .button{
+    width:auto;
+}
+
+.about__secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 28px;
+
+    border-radius:12px;
+    border:1px solid #D9D9D9;
+
+    background:#fff;
+
+    font-family:"DM Sans",sans-serif;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.about__secondary-btn:hover{
+    background:#F8FAFC;
+}
+
+.about__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 472px;
+    border-radius: 32px;
+    border: 1px solid rgba(196,198,206,.4);
+
+    background: #EFF4FF;
+
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,.05);
+}
+
+.about__image > img{
+    width:80%;
+    max-width:400px;
+    height:auto;
+}
+
+.about-card {
+    width: fit-content;
+    border-radius: 11.793px;
+    background: white;
+    box-shadow: 0 19.654px 24.568px -4.914px rgba(0, 0, 0, 0.10), 0 7.862px 9.827px -5.896px rgba(0, 0, 0, 0.10);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    z-index: 5;
+}
+
+.about-card img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.about-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+
+    margin-bottom: 4px;
+}
+
+.about-card p {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.about-card--top{
+    top:4%;
+    right: -8%;
+}
+
+.about-card--bottom{
+    bottom:8%;
+    left:-8%;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .about {
+        padding: 48px 0;
+    }
+
+    .about__container {
+        padding: 0 40px;
+        gap: 48px;
+    }
+
+    .about__title {
+        font-size: 38px;
+    }
+
+    .about__description {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 60px 0;
+    }
+
+    .about__container {
+        flex-direction: column;
+        padding: 0 16px;
+        gap: 48px;
+    }
+
+    .about__content {
+        width: 100%;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .about__image {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .about__image img {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .about__title {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .about__description {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Buttons */
+
+    .about__actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .about__actions .button,
+    .about__secondary-btn {
+        width: 100%;
+    }
+
+    .about-card img {
+        border-radius: 4px;
+        object-fit: contain;
+    }
+
+    .about-card--top {
+        top: 8%;
+        left: 52%;
+    }
+
+    .about-card--bottom {
+        bottom: 8%;
+        right: 20%;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .about__container {
+        padding: 0 20px;
+    }
+
+    .about__title {
+        font-size: 28px;
+    }
+
+
+    .floating-card {
+        transform: scale(.8);
+        transform-origin: center;
+    }
+
+}
