@@ -1,11 +1,5 @@
-import Dashboard from './pages/Dashboard';
-
 function App() {
-  return (
-    <div>
-      <Dashboard />
-    </div>
-  );
+  return <h1>PocketSync MVP</h1>;
 }
 
 export default App;
