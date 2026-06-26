@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import "./PublicLayout.css";
 
 export default function PublicLayout() {
   return (
-   <div className="min-h-screen bg-slate-50">
-      <Outlet />
-    </div>
+    <main className="public-layout">
+      <div className="public-container">
+        <Outlet />
+      </div>
+    </main>
   );
 }

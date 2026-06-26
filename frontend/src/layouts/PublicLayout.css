@@ -1,0 +1,15 @@
+.public-layout {
+  min-height: 100vh;
+  background-color: var(--gray-50);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+.public-container {
+  width: 100%;
+  max-width: 1200px;
+}

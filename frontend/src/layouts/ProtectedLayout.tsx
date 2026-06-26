@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import "./ProtectedLayout.css";
 
 export default function ProtectedLayout() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="protected-layout">
       <Outlet />
-    </div>
+    </main>
   );
 }

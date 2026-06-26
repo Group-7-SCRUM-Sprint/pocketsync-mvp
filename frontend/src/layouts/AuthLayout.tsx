@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import "./AuthLayout.css";
 
 export default function AuthLayout() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100">
-      <Outlet />
-    </div>
+    <main className="auth-layout">
+      <div className="auth-container">
+        <Outlet />
+      </div>
+    </main>
   );
 }
