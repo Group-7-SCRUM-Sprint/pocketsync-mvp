@@ -1,15 +1,15 @@
-import Button from "../../components/common/Button/Button";
+import "./Landing.css";
+
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Landing() {
   return (
-    <div className="p-8">
-      <h1 className="mb-6 text-3xl font-bold">
-        PocketSync
-      </h1>
+    <>
+      <Navbar />
 
-      <Button>
-        Get Started
-      </Button>
-    </div>
+      <main className="landing-page">
+        <h1>Landing Page</h1>
+      </main>
+    </>
   );
 }

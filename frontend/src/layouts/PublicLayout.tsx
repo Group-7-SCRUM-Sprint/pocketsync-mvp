@@ -4,9 +4,7 @@ import "./PublicLayout.css";
 export default function PublicLayout() {
   return (
     <main className="public-layout">
-      <div className="public-container">
-        <Outlet />
-      </div>
+      <Outlet />
     </main>
   );
 }
