@@ -36,3 +36,27 @@
     font-size:13px;
     color:#DC2626;
 }
+
+.input__required{
+    color:#EF4444;
+    margin-left:4px;
+}
+.input__field--error{
+    border-color:#EF4444;
+}
+
+.input__field--error:focus{
+    border-color:#EF4444;
+    box-shadow:0 0 0 3px rgba(239,68,68,.15);
+}
+
+.input__error{
+    color:#EF4444;
+    font-size:13px;
+    margin-top:4px;
+}
+
+.input__field:disabled{
+    background:#F3F4F6;
+    cursor:not-allowed;
+}

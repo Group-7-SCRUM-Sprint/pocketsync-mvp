@@ -20,7 +20,7 @@ export default function RegistrationSuccess() {
         />
 
         <h1 className="success__title">
-          Welcome to PocketSync!
+          Welcome to <br /> PocketSync!
         </h1>
 
         <p className="success__description">
