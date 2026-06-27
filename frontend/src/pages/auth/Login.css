@@ -1,0 +1,64 @@
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.login-form__options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.login-form__forgot{
+    font-size:14px;
+    color:#3454F5;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.login-form__forgot:hover{
+    text-decoration:underline;
+}
+
+.login-form__button{
+    width:100%;
+    justify-content:center;
+}
+
+.login-footer{
+    margin-top:32px;
+    text-align:center;
+}
+
+.login-footer p{
+    font-size:14px;
+    color:#6B7280;
+}
+
+.login-footer a{
+    color:#3454F5;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.login-footer a:hover{
+    text-decoration:underline;
+}
+
+.login-form__button{
+    width:100%;
+}
+
+@media (max-width:768px){
+
+    .login-form{
+        gap:18px;
+    }
+
+    .login-form__options{
+        flex-direction:row;
+        align-items:center;
+    }
+
+}

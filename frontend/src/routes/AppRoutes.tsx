@@ -7,6 +7,7 @@ import ProtectedLayout from "../layouts/ProtectedLayout";
 import Landing from "../pages/landing/Landing";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import RegistrationSuccess from "../pages/auth/RegistrationSuccess";
 import Dashboard from "../pages/dashboard/Dashboard";
 import LinkAccount from "../pages/link-account/LinkAccount";
 import NotFound from "../pages/NotFound";
@@ -23,6 +24,7 @@ export default function AppRoutes() {
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register/success" element={<RegistrationSuccess />} />
       </Route>
 
       {/* Protected */}

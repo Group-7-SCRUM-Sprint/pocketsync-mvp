@@ -1,15 +1,30 @@
 .auth-layout {
-  min-height: 100vh;
-  background-color: var(--gray-50);
+    min-height: 100vh;
+    background: #F8FAFC;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  padding: 2rem;
+    padding: 40px 20px;
 }
 
-.auth-container {
-  width: 100%;
-  max-width: 450px;
+.auth-layout__container {
+    width: 100%;
+    max-width: 420px;
+}
+
+@media (max-width:768px){
+
+    .auth-layout{
+        justify-content:flex-start;
+        align-items:flex-start;
+
+        padding:40px 24px;
+    }
+
+    .auth-layout__container{
+        max-width:100%;
+    }
+
 }

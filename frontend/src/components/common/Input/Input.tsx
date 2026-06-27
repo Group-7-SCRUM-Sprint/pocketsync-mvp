@@ -13,21 +13,23 @@ export default function Input({
   ...props
 }: InputProps) {
   return (
-    <div className="input-group">
-      <label className="input-label">
+    <div className="input">
+
+      <label className="input__label">
         {label}
       </label>
 
       <input
-        className={`input-field ${error ? "input-error" : ""} ${className}`}
+        className={`input__field ${className}`}
         {...props}
       />
 
       {error && (
-        <p className="input-error-text">
+        <span className="input__error">
           {error}
-        </p>
+        </span>
       )}
+
     </div>
   );
 }
