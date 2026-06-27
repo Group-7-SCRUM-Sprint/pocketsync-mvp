@@ -58,8 +58,8 @@
 /* Login Button */
 
 .navbar__button {
-  padding: 12px 24px;
-  border-radius: 10px;
+  padding: 8px 24px;
+  border-radius: 8px;
   background: #3454f5;
   color: #ffffff !important;
 }
