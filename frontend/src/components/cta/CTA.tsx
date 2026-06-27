@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./CTA.css";
 
 import Button from "../../components/common/Button/Button";
 
 export default function CTA() {
+  const navigate = useNavigate();
+
   return (
     <section className="cta">
       <div className="cta__container">
@@ -17,11 +20,11 @@ export default function CTA() {
         </p>
 
         <div className="cta__actions">
-          <Button>
+          <Button onClick={() => navigate("/register")}>
             Create Your Account
           </Button>
 
-          <button className="cta__secondary-btn">
+          <button className="cta__secondary-btn" onClick={() => navigate("/register")}>
             Speak to an Advisor
           </button>
         </div>

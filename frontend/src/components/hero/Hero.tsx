@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import dashboardImage from "../../assets/images/hero-dashboard.jpg";
 import gtbankLogo from "../../assets/icons/gtbank.png";
@@ -6,6 +7,8 @@ import zenithLogo from "../../assets/icons/zenith.png";
 import Button from "../common/Button/Button";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero__container">
@@ -26,9 +29,9 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <Button>Get Started</Button>
+            <Button onClick={() => navigate("/register")}>Get Started</Button>
 
-            <button className="hero__secondary-btn">
+            <button className="hero__secondary-btn" onClick={() => navigate("/login")}>
               Learn More
             </button>
           </div>
