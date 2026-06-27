@@ -246,7 +246,7 @@
     }
 
     .floating-card--bottom {
-        bottom: 12px;
+        bottom: -20px;
         right: -12px;
     }
 
