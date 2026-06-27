@@ -66,6 +66,28 @@ const Dashboard: React.FC = () => {
       <Sidebar user={currentUser} activePage={activePage} onNavigate={setActivePage} />
 
       <main className="dashboard-main">
+        {/* Mobile Header */}
+        <div className="mobile-header">
+          <div className="mobile-header__logo">
+            <div className="logo-icon">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="11" fill="#5B5FC7" />
+                <path d="M7 11.5l3 3 5-5.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <span className="mobile-header__logo-name">pocketsync</span>
+          </div>
+          <div className="mobile-header__actions">
+            <button className="mobile-header__btn" onClick={() => handleAction("Notifications")} aria-label="Notifications">
+              <BellIcon />
+              <span className="bell-dot" />
+            </button>
+            <div className="mobile-header__avatar">
+              {currentUser.name.charAt(0)}
+            </div>
+          </div>
+        </div>
+
         {/* Topbar */}
         <header className="dashboard-topbar">
           <div className="search-bar">
@@ -163,6 +185,51 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </main>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="mobile-nav">
+        <button
+          className={`mobile-nav__item ${activePage === "dashboard" ? "mobile-nav__item--active" : ""}`}
+          onClick={() => setActivePage("dashboard")}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+          </svg>
+          <span>Dashboard</span>
+        </button>
+        <button
+          className={`mobile-nav__item ${activePage === "accounts" ? "mobile-nav__item--active" : ""}`}
+          onClick={() => setActivePage("accounts")}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+          <span>Accounts</span>
+        </button>
+        <button
+          className={`mobile-nav__item ${activePage === "analytics" ? "mobile-nav__item--active" : ""}`}
+          onClick={() => setActivePage("analytics")}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 20V10M12 20V4M6 20v-6" />
+          </svg>
+          <span>Analytics</span>
+        </button>
+        <button
+          className={`mobile-nav__item ${activePage === "settings" ? "mobile-nav__item--active" : ""}`}
+          onClick={() => setActivePage("settings")}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+          <span>Settings</span>
+        </button>
+      </nav>
 
       {/* Link Account Modal */}
       {showLinkModal && (
