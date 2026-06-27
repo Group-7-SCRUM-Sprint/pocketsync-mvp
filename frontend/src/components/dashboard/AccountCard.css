@@ -1,0 +1,108 @@
+.account-card {
+  background: #fff;
+  border: 1.5px solid #ebebf5;
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.account-card:hover {
+  border-color: #5B5FC7;
+  box-shadow: 0 4px 16px rgba(91,95,199,0.1);
+}
+
+.account-card:focus {
+  outline: 2px solid #5B5FC7;
+  outline-offset: 2px;
+}
+
+.account-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-card__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.account-card__info {
+  flex: 1;
+}
+
+.account-card__bank {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.account-card__last4 {
+  margin: 0;
+  font-size: 11px;
+  color: #9b9bb4;
+}
+
+.account-card__header svg {
+  color: #c4c4d4;
+  flex-shrink: 0;
+}
+
+.account-card__balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-card__balance-label {
+  font-size: 11px;
+  color: #9b9bb4;
+}
+
+.account-card__balance {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* Link Account variant */
+.account-card--link {
+  border: 2px dashed #d0d0eb;
+  background: #fafafe;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 110px;
+}
+
+.account-card--link:hover {
+  border-color: #5B5FC7;
+  background: #f0f0ff;
+}
+
+.link-account__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ebebff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-account__label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5B5FC7;
+}
