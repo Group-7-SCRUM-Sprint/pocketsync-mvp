@@ -47,9 +47,9 @@ export default function About() {
         {/* Right Content */}
         <div className="about__content">
 
-            <h1 className="about__title">
+            <h2 className="about__title">
                 About Pocketsync
-            </h1>
+            </h2>
 
           <p className="about__description">
             Aggregate all your Nigerian bank accounts, Bills, and expenses into a single, high-velocity dashboard. 

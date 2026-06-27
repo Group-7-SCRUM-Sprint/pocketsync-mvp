@@ -76,14 +76,14 @@
     width:auto;
 }
 
-.hero__secondary-btn{
+.hero__actions .hero__secondary-btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
 
-    padding:16px 28px;
+    padding:8px 28px;
 
-    border-radius:12px;
+    border-radius:8px;
     border:1px solid #D9D9D9;
 
     background:#fff;
@@ -241,12 +241,12 @@
     }
 
     .floating-card--top {
-        top: 540px;
+        top: 512px;
         left: -12px;
     }
 
     .floating-card--bottom {
-        bottom: -200px;
+        bottom: -168px;
         right: -12px;
     }
 

@@ -6,6 +6,7 @@ import Trusted from "../../components/trusted/Trusted";
 import About from "../../components/about/About";
 import Features from "../../components/features/Features";
 import CTA from "../../components/cta/CTA";
+import Footer from "../../components/footer/Footer";
 
 
 export default function Landing() {
@@ -19,6 +20,7 @@ export default function Landing() {
         <About />
         <Features />
         <CTA />
+        <Footer />
       </main>
     </>
   );

@@ -1,0 +1,176 @@
+.footer {
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #ECECEC;
+}
+
+.footer__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 64px 80px 32px;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.footer__brand {
+    max-width: 360px;
+}
+
+.footer__logo {
+    height: 24px;
+    margin-bottom: 24px;
+}
+
+.footer__description {
+    color: #6B7280;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer__links {
+    display: flex;
+    gap: 72px;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__column h4 {
+    margin: 0 0 24px;
+
+    color: #111827;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.footer__column a {
+    margin-bottom: 14px;
+
+    color: #6B7280;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+
+    transition: .25s;
+}
+
+.footer__column a:hover {
+    color: #3454F5;
+}
+
+.footer__divider {
+    margin: 48px 0 32px;
+    border-top: 1px solid #ECECEC;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__bottom p {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.footer__social {
+    display: flex;
+    gap: 18px;
+}
+
+.footer__social a {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #374151;
+
+    transition: .25s;
+}
+
+.footer__social a:hover {
+    background: #F4F6F8;
+    color: #3454F5;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:1024px){
+
+.footer__container{
+
+padding:64px 40px 32px;
+
+}
+
+.footer__top{
+
+flex-direction:column;
+
+gap:48px;
+
+}
+
+.footer__links{
+
+width:100%;
+justify-content:space-between;
+
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+.footer__container{
+
+padding:48px 20px 24px;
+
+}
+
+.footer__links{
+
+flex-direction:column;
+
+gap:32px;
+
+}
+
+.footer__bottom{
+
+flex-direction:column;
+
+gap:24px;
+
+text-align:center;
+
+}
+
+.footer__social{
+
+justify-content:center;
+
+}
+
+}

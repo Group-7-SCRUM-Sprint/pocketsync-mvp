@@ -1,6 +1,6 @@
 .trusted{
 
-    padding:40px 0;
+    padding:60px 0;
     background:#F2F7F8;;
 }
 
@@ -8,7 +8,7 @@
 
     max-width:1440px;
     margin:0 auto;
-    padding:0 80px;
+    padding:0 40px;
     display:flex;
     flex-direction:column;
     gap:40px;
