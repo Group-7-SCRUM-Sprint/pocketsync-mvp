@@ -55,15 +55,21 @@ const bankLogos: Record<string, string> = {
   "Providus": providus,
 };
 
-// Resolve bank logo by exact or fuzzy match; fallback to app brand logo
+// Resolve bank logo by normalizing and fuzzy matching bank names; fallback to app brand logo
+const normalize = (s: string) => s.replace(/[^a-z0-9]/gi, "").toLowerCase();
+const normalizedBankLogos: Record<string, string> = Object.fromEntries(
+  Object.entries(bankLogos).map(([k, v]) => [normalize(k), v])
+);
+
 const getLogoForBank = (name?: string) => {
   if (!name) return brandLogo;
-  if (bankLogos[name]) return bankLogos[name];
-  const lower = name.toLowerCase();
-  for (const key in bankLogos) {
-    const k = key.toLowerCase();
-    if (k.includes(lower) || lower.includes(k)) {
-      return bankLogos[key];
+  const n = normalize(name);
+  // direct normalized match
+  if (normalizedBankLogos[n]) return normalizedBankLogos[n];
+  // fuzzy match by substring on normalized keys
+  for (const key in normalizedBankLogos) {
+    if (key.includes(n) || n.includes(key)) {
+      return normalizedBankLogos[key];
     }
   }
   return brandLogo;
