@@ -7,6 +7,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import "./styles/index.css";
 
 import App from "./App";
+import ScrollToTop from "./components/ScrollToTop";
 import { store } from "./store";
 import { queryClient } from "./lib/react-query";
 
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
+          <ScrollToTop />
           <App />
         </BrowserRouter>
       </QueryClientProvider>
