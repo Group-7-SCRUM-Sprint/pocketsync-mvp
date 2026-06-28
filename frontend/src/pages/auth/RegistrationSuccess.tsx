@@ -37,7 +37,18 @@ export default function RegistrationSuccess() {
             </Button>
           </Link>
 
-          <Link to="/accounts/link">
+          {/* <Link to="/accounts/link">
+            <Button
+              variant="outline"
+              className="success__button"
+            >
+              Link Bank Account
+            </Button>
+          </Link> */}
+          <Link
+            to="/accounts/link"
+            state={{ openWizard: true }}
+          >
             <Button
               variant="outline"
               className="success__button"

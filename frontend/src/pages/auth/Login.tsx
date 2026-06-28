@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Login.css";
 
@@ -14,6 +14,7 @@ import AuthFooter from "../../components/auth/AuthFooter/AuthFooter";
 
 
 export default function Login() {
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +43,7 @@ export default function Login() {
   setErrors(newErrors);
 
   if (!newErrors.email && !newErrors.password) {
-    console.log("Login successful");
+    navigate("/dashboard");
   }
 };
 
