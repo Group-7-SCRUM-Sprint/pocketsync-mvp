@@ -50,8 +50,8 @@ const HelpIcon = () => (
 
 const GearIcon = () => (
   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-    <circle cx="11" cy="11" r="3" stroke="#4E61F6" strokeWidth="1.5" />
-    <path d="M11 2v2M11 18v2M2 11h2M18 11h2M4.22 4.22l1.41 1.41M16.37 16.37l1.41 1.41M4.22 17.78l1.41-1.41M16.37 5.63l1.41-1.41" stroke="#4E61F6" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="11" cy="11" r="3" stroke="var(--color-primary)" strokeWidth="1.5" />
+    <path d="M11 2v2M11 18v2M2 11h2M18 11h2M4.22 4.22l1.41 1.41M16.37 16.37l1.41 1.41M4.22 17.78l1.41-1.41M16.37 5.63l1.41-1.41" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 

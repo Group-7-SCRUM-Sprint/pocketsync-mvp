@@ -309,10 +309,7 @@
 .modal-bank-btn:hover {
   border-color: var(--color-primary);
   background: #f0f0ff;
-  color: #4E61F6;
-}
-
-.modal-close {
+    color: var(--color-primary);
   width: 100%;
   padding: 12px;
   border: none;

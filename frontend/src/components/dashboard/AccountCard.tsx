@@ -57,7 +57,7 @@ export const LinkAccountCard: React.FC<LinkAccountCardProps> = ({ onLink }) => (
   <div className="account-card account-card--link" onClick={onLink} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && onLink()}>
     <div className="link-account__icon">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <path d="M12 5v14M5 12h14" stroke="#4E61F6" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M12 5v14M5 12h14" stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
     </div>
     <p className="link-account__label">Link Account</p>
