@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar";
 import BalanceCard from "./BalanceCard";
 import AccountCard, { LinkAccountCard } from "./AccountCard";
 import TransactionItem from "./TransactionItem";
-import { accounts, transactions, currentUser } from "../../data/mockData";
-import type { Account } from "../../types";
+import { currentUser } from "../../data/mockData";
+import type { Account, Transaction, User } from "../../types";
 import "./Dashboard.css";
 
 import brandLogo from "../../assets/logo.svg";
@@ -80,10 +80,35 @@ const Dashboard: React.FC = () => {
   const [activePage, setActivePage] = useState("dashboard");
   const [search, setSearch] = useState("");
   
-  // Dynamic State for Mock Data
-  const [user, setUser] = useState(currentUser);
-  const [allAccounts, setAllAccounts] = useState(accounts);
-  const [allTransactions, setAllTransactions] = useState(transactions);
+  // Dynamic State for Mock Data - initialize from localStorage when available
+  const loadFromStorage = <T,>(key: string, fallback: T) => {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? (JSON.parse(raw) as T) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  };
+
+  const [user, setUser] = useState(() => loadFromStorage<User | typeof currentUser>("ps_user", currentUser));
+  const accountsKey = `ps_accounts_${(user && user.email) || "guest"}`;
+  const txKey = `ps_transactions_${(user && user.email) || "guest"}`;
+
+  const [allAccounts, setAllAccounts] = useState<Account[]>(() => loadFromStorage<Account[]>(accountsKey, []));
+  const [allTransactions, setAllTransactions] = useState<Transaction[]>(() => loadFromStorage<Transaction[]>(txKey, []));
+
+  // persist user/accounts/transactions to localStorage
+  React.useEffect(() => {
+    try { localStorage.setItem("ps_user", JSON.stringify(user)); } catch {}
+  }, [user]);
+
+  React.useEffect(() => {
+    try { localStorage.setItem(accountsKey, JSON.stringify(allAccounts)); } catch {}
+  }, [allAccounts, accountsKey]);
+
+  React.useEffect(() => {
+    try { localStorage.setItem(txKey, JSON.stringify(allTransactions)); } catch {}
+  }, [allTransactions, txKey]);
   
   // Navigation & Modals Toggles
   const [showLinkModal, setShowLinkModal] = useState(false);
@@ -425,6 +450,20 @@ const Dashboard: React.FC = () => {
 
   // Subview Layout Renderers
   const renderDashboardView = () => {
+    // Empty state for new users: show prompt to link an account when no data
+    if (allAccounts.length === 0 && allTransactions.length === 0) {
+      return (
+        <div style={{ padding: 40, textAlign: "center" }}>
+          <h2 style={{ marginBottom: 8 }}>Welcome, {user.name}</h2>
+          <p style={{ marginBottom: 20, color: "#6b7280" }}>It looks like you haven't added any accounts yet. Link a bank to get started and see your balances and transactions here.</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
+            <button className="action-btn action-btn--outline" onClick={() => setShowLinkModal(true)}>Link an Account</button>
+            <button className="action-btn action-btn--icon" onClick={() => triggerToast("Start by linking an account first")}>+</button>
+          </div>
+        </div>
+      );
+    }
+
     const dashboardTxs = getFilteredTransactions().slice(0, 5);
     const dashboardAccs = allAccounts.slice(0, 4);
     

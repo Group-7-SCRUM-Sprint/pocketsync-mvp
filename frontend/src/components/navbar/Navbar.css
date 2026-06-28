@@ -132,7 +132,8 @@
 
   /* Reduce mobile nav text size to mobile standard */
   .navbar__links a {
-    font-size: 14px;
+    font-size: 10px;
+    font-weight: 600;
   }
 
   .navbar__links.active {

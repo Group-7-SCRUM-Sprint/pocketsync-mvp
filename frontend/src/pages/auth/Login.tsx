@@ -18,8 +18,10 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const [errors, setErrors] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -28,9 +30,14 @@ export default function Login() {
   e.preventDefault();
 
   const newErrors = {
+    name: "",
     email: "",
     password: "",
   };
+
+  if (!name.trim()) {
+    newErrors.name = "Name is required";
+  }
 
   if (!email.trim()) {
     newErrors.email = "Email is required";
@@ -42,7 +49,11 @@ export default function Login() {
 
   setErrors(newErrors);
 
-  if (!newErrors.email && !newErrors.password) {
+  if (!newErrors.name && !newErrors.email && !newErrors.password) {
+    // save user display name so dashboard shows the entered name
+    try {
+      localStorage.setItem("ps_user", JSON.stringify({ name: name || email.split("@")[0], email }));
+    } catch {}
     navigate("/dashboard");
   }
 };
@@ -67,6 +78,16 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
           error={errors.email}
+        />
+
+        <Input
+          label="Name"
+          type="text"
+          placeholder="Enter display name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          error={errors.name}
         />
 
         <PasswordInput
