@@ -110,5 +110,16 @@
 @media (max-width: 767px) {
     .accounts-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .account-card {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .account-card__balance-row {
+        flex-wrap: wrap;
+        gap: 12px;
     }
 }
