@@ -73,26 +73,13 @@
   border: none;
 
   font-size: 28px;
-/* Mobile */
-@media (max-width: 768px) {
-  .navbar__container {
-    padding: 0 16px;
-  }
-
 
   cursor: pointer;
 }
-    background: none;
-    border: none;
 
-    /* larger touch target and icon for mobile */
-    font-size: 32px;
-    padding: 8px;
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+/* Tablet */
+
+@media (max-width: 992px) {
   .navbar__container {
     padding: 0 24px;
   }
@@ -128,12 +115,6 @@
     background: #ffffff;
 
     border-top: 1px solid #ececec;
-  }
-
-  /* Reduce mobile nav text size to mobile standard */
-  .navbar__links a {
-    font-size: 10px;
-    font-weight: 600;
   }
 
   .navbar__links.active {
