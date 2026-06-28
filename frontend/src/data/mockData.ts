@@ -15,7 +15,7 @@ export const currentUser: User = {
 export const accounts: Account[] = [
   {
     id:"1",
-    bankName:"GTBank",
+    bankName:"GT Bank",
     logo: gtbank,
     lastFour:"4521",
     availableBalance:250000,
@@ -68,7 +68,7 @@ export const transactions: Transaction[] = [
   {
     id: "1",
     description: "Salary Payment",
-    bank: "GTBank",
+    bank: "GT Bank",
     logo: gtbank,
     date: "Today",
     amount: 250000,
@@ -77,7 +77,7 @@ export const transactions: Transaction[] = [
   {
     id: "2",
     description: "Transfer to Sarah",
-    bank: "GTBank",
+    bank: "GT Bank",
     logo: gtbank,
     date: "Yesterday",
     amount: -25000,
