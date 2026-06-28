@@ -55,6 +55,20 @@ const bankLogos: Record<string, string> = {
   "Providus": providus,
 };
 
+// Resolve bank logo by exact or fuzzy match; fallback to app brand logo
+const getLogoForBank = (name?: string) => {
+  if (!name) return brandLogo;
+  if (bankLogos[name]) return bankLogos[name];
+  const lower = name.toLowerCase();
+  for (const key in bankLogos) {
+    const k = key.toLowerCase();
+    if (k.includes(lower) || lower.includes(k)) {
+      return bankLogos[key];
+    }
+  }
+  return brandLogo;
+};
+
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const [activePage, setActivePage] = useState("dashboard");
@@ -280,7 +294,7 @@ const Dashboard: React.FC = () => {
       return;
     }
     
-    const bankLogo = bankLogos[selectedBankName];
+    const bankLogo = getLogoForBank(selectedBankName);
     
     const randomBalance = Math.floor(Math.random() * 450000) + 50000;
     const randomLastFour = Math.floor(Math.random() * 9000) + 1000;
@@ -288,7 +302,7 @@ const Dashboard: React.FC = () => {
     const newAccount: Account = {
       id: String(allAccounts.length + 1),
       bankName: selectedBankName,
-      logo: bankLogo,
+      logo: bankLogo || brandLogo,
       lastFour: String(randomLastFour),
       availableBalance: randomBalance,
     };
