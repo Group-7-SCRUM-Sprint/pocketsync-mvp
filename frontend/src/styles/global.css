@@ -41,3 +41,22 @@ button:disabled {
   background: var(--color-primary);
   color: var(--color-white);
 }
+
+/* Prevent iOS from auto-zooming when inputs have small font-sizes */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Ensure form controls compute at least 16px on small screens to avoid mobile zoom */
+@media (max-width: 480px) {
+  input,
+  textarea,
+  select,
+  button,
+  .input__field,
+  .password-input__field,
+  .search-input {
+    font-size: 16px !important;
+  }
+}
