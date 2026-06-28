@@ -11,15 +11,10 @@ import "./Dashboard.css";
 import brandLogo from "../../assets/logo.svg";
 
 
-import gtbank from "../../assets/banks/gtbank.png";
-import access from "../../assets/banks/access.png";
-import fcmb from "../../assets/banks/fcmb.png";
-import firstbank from "../../assets/banks/firstbank.png";
-import uba from "../../assets/banks/uba.png";
-import kuda from "../../assets/banks/kuda.png";
-import providus from "../../assets/banks/providus.png";
-
-
+// Dynamically import all bank logos from the assets/banks folder (Vite)
+// so we can match user-selected bank names to available logo files.
+type AssetModule = { default?: string } | string;
+const bankAssets = import.meta.glob('../../assets/banks/*.{png,jpg,jpeg,svg}', { eager: true }) as Record<string, AssetModule>;
 
 const BellIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -45,31 +40,33 @@ const PlusIcon = () => (
   </svg>
 );
 
-const bankLogos: Record<string, string> = {
-  "GTBank": gtbank,
-  "Access Bank": access,
-  "Fcmb": fcmb,
-  "First Bank": firstbank,
-  "UBA": uba,
-  "Kuda": kuda,
-  "Providus": providus,
-};
-
-// Resolve bank logo by normalizing and fuzzy matching bank names; fallback to app brand logo
+// Resolve bank logo by normalizing and fuzzy matching bank names against
+// filenames in the `assets/banks` folder. Falls back to the app brand logo.
 const normalize = (s: string) => s.replace(/[^a-z0-9]/gi, "").toLowerCase();
-const normalizedBankLogos: Record<string, string> = Object.fromEntries(
-  Object.entries(bankLogos).map(([k, v]) => [normalize(k), v])
+
+const dynamicBankLogos: Record<string, string> = Object.fromEntries(
+  Object.entries(bankAssets).map(([p, mod]) => {
+    let src: string | null = null;
+    if (typeof mod === "string") src = mod;
+    else {
+      const maybe = mod as { default?: unknown };
+      if (maybe && typeof maybe.default === "string") src = maybe.default as string;
+    }
+    const filename = p.split("/").pop() || "";
+    const key = normalize(filename.replace(/\.(png|jpe?g|svg)$/i, ""));
+    return [key, src];
+  }).filter(([, v]) => !!v) as [string, string][]
 );
 
 const getLogoForBank = (name?: string) => {
   if (!name) return brandLogo;
   const n = normalize(name);
-  // direct normalized match
-  if (normalizedBankLogos[n]) return normalizedBankLogos[n];
+  // direct normalized filename match
+  if (dynamicBankLogos[n]) return dynamicBankLogos[n];
   // fuzzy match by substring on normalized keys
-  for (const key in normalizedBankLogos) {
+  for (const key in dynamicBankLogos) {
     if (key.includes(n) || n.includes(key)) {
-      return normalizedBankLogos[key];
+      return dynamicBankLogos[key];
     }
   }
   return brandLogo;
