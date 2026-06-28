@@ -1,11 +1,11 @@
 import type { Account, Transaction, User } from "../types";
-import gtbank from "../assets/banks/GTBank.png";
-import access from "../assets/banks/Access.png";
-import fcmb from "../assets/banks/FCMB.png";
-import firstbank from "../assets/banks/FirstBank.png";
-import uba from "../assets/banks/UBA.png";
-import kuda from "../assets/banks/Kuda.png";
-import providus from "../assets/banks/Providus.png";
+import gtbank from "../assets/banks/gtbank.png";
+import access from "../assets/banks/access.png";
+import fcmb from "../assets/banks/fcmb.png";
+import firstbank from "../assets/banks/firstbank.png";
+import uba from "../assets/banks/uba.png";
+import kuda from "../assets/banks/kuda.png";
+import providus from "../assets/banks/providus.png";
 
 export const currentUser: User = {
   name: "Olamide",

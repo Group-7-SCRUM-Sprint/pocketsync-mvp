@@ -11,13 +11,13 @@ import "./Dashboard.css";
 import brandLogo from "../../assets/logo.svg";
 
 
-import gtbank from "../../assets/banks/GTBank.png";
-import access from "../../assets/banks/Access.png";
-import fcmb from "../../assets/banks/FCMB.png";
-import firstbank from "../../assets/banks/FirstBank.png";
-import uba from "../../assets/banks/UBA.png";
-import kuda from "../../assets/banks/Kuda.png";
-import providus from "../../assets/banks/Providus.png";
+import gtbank from "../../assets/banks/gtbank.png";
+import access from "../../assets/banks/access.png";
+import fcmb from "../../assets/banks/fcmb.png";
+import firstbank from "../../assets/banks/firstbank.png";
+import uba from "../../assets/banks/uba.png";
+import kuda from "../../assets/banks/kuda.png";
+import providus from "../../assets/banks/providus.png";
 
 const BellIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
