@@ -1,0 +1,103 @@
+.link-account{
+    max-width: 480px;
+    margin: 0 auto;
+    padding: var(--space-2);
+    font-family: var(--font-family);
+    color: var(--colo-text);
+}
+
+.li-logo{
+    margin: auto;
+    margin-bottom: var(--space-2);
+}
+
+.progress-bar{
+    margin-top: var(--space-3);
+    margin-left: 28%;
+    margin-bottom: var(--space-3);
+
+}
+
+.li-title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 28%;
+}
+
+.li-subtitle{
+    color: #667185;
+    font-size: 15px;
+    margin-bottom: var(--space-2);
+    margin-left: 20%;
+}
+
+.li-search{
+    width: 100%;
+    height: 45px;
+    padding: 12px 16px;
+    border: 1px solid #0935D1;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-bottom: var(--space-5);
+    font-family: var(--font-family);
+
+}
+
+.li-banks-labels{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--colo-text-secondary);
+    letter-spacing: 0.05em;
+}
+
+
+.li-banks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.bank-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  gap: var(--space-1);
+}
+
+.bank-card span{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bank-cardsub{
+    font-size: 10px;
+
+}
+
+.li-security{
+    display: flex;
+  gap: var(--space-1);
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+}
+
+.security-title{
+font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.security-text{
+ font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+

@@ -1,37 +1,58 @@
 import {useState} from "react";
 import shieldIcon from "../../assets/icons/secure-lock.png";
+import pagaLogo from "../../assets/icons/Paga.png";
+import wemaLogo from "../../assets/icons/Wema.png";
+import stabicLogo from "../../assets/icons/Stanbic.png";
+import unionLogo from "../../assets/icons/Union.png"; 
+import fidelityLogo from "../../assets/icons/Fidelity.png";
+import gtbLogo from "../../assets/icons/gtbank.png";
+import bar from "../../assets/icons/progressBar.png";
+import logo from "../../assets/logo.svg";
+import "./LinkAccount.css";
 
 const ALL_BANKS = [
-  "GTBank", "Opay", "Access Bank", "Palmpay", "UBA", "Kuda Bank", "First Bank", "Moniepoint",
+  {name:"GTBank", logo: gtbLogo },
+  {name:"Fidelity", logo: fidelityLogo },
+  {name:"Union Bank", logo: unionLogo },
+  {name:"Stanbic-ibtc", logo: stabicLogo },
+  {name:"Wema", logo: wemaLogo },
+  {name:"Paga", logo: pagaLogo },
 ];
 export default function LinkAccount() {
   const [search, setSearch]= useState("");
 
   /* filters banks when the user searches */
-  const filteredBanks = ALL_BANKS.filter((bank) => bank.toLowerCase().includes(search.toLowerCase())
+  const filteredBanks = ALL_BANKS.filter((bank) => bank.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return(
    <div className="link-account">
 
     <div className="li-header">
-        <button onClick={()=> window.history.back()}>←</button>
+       <img src={logo} alt="pocketsync" className="li-logo"/>
+    </div>
+
+    <div className="progress-bar">
+        <img src={bar} alt="progress bar" />
     </div>
 
     <h1 className="li-title">Select Your Bank</h1>
-    <p className="li-subtitile">Search For Your Bank Here</p>
+    <p className="li-subtitle">Search for your bank or choose from the list</p>
 
-    <input className="li-search" type="text" placeholder="Search for your bank" value={search} onChange={(e) => setSearch(e.target.value)} />
-
-    <p>{filteredBanks.length} banks found</p>
+    <input className="li-search" type="text" placeholder="Search for your bank"value={search} onChange={(e) => setSearch(e.target.value)} />
 
     <div className="li-banks">
       <p className="li-banks-labels">POPULAR BANKS</p>
       <div className="li-banks-grid">
           {filteredBanks.map((bank) => (
-          <div key={bank} className="bank-card">
-            <span>{bank}</span>
-            <span className="bank-cardsub">Tap to connect</span>
+          <div key={bank.name} className="bank-card">
+            <img src={bank.logo} alt={bank.name}/>
+
+            <div style={{flex:1}}>
+              <span>{bank.name}</span>
+              <p className="bank-cardsub">Tap to connect</p>
+            </div>
+            <span>›</span>
           </div>
           ))}
       </div>
