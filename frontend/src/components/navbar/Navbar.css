@@ -86,10 +86,10 @@
     border: none;
 
     /* larger touch target and icon for mobile */
-    font-size: 34px;
+    font-size: 32px;
     padding: 8px;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
