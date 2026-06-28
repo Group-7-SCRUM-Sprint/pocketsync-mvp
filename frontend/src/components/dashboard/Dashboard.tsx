@@ -11,7 +11,7 @@ import "./Dashboard.css";
 import brandLogo from "../../assets/logo.svg";
 
 
-import gtbank from "../../assets/Banks/GTBank.png";
+import gtbank from "../../assets/banks/GTBank.png";
 import access from "../../assets/banks/Access.png";
 import fcmb from "../../assets/banks/FCMB.png";
 import firstbank from "../../assets/banks/FirstBank.png";
