@@ -85,7 +85,8 @@ const Dashboard: React.FC = () => {
     try {
       const raw = localStorage.getItem(key);
       return raw ? (JSON.parse(raw) as T) : fallback;
-    } catch (e) {
+    } catch {
+      /* ignore JSON parse/storage errors */
       return fallback;
     }
   };
@@ -99,15 +100,15 @@ const Dashboard: React.FC = () => {
 
   // persist user/accounts/transactions to localStorage
   React.useEffect(() => {
-    try { localStorage.setItem("ps_user", JSON.stringify(user)); } catch {}
+    try { localStorage.setItem("ps_user", JSON.stringify(user)); } catch { /* ignore storage errors */ }
   }, [user]);
 
   React.useEffect(() => {
-    try { localStorage.setItem(accountsKey, JSON.stringify(allAccounts)); } catch {}
+    try { localStorage.setItem(accountsKey, JSON.stringify(allAccounts)); } catch { /* ignore storage errors */ }
   }, [allAccounts, accountsKey]);
 
   React.useEffect(() => {
-    try { localStorage.setItem(txKey, JSON.stringify(allTransactions)); } catch {}
+    try { localStorage.setItem(txKey, JSON.stringify(allTransactions)); } catch { /* ignore storage errors */ }
   }, [allTransactions, txKey]);
   
   // Navigation & Modals Toggles

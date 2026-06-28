@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { accounts as mockAccounts, transactions as mockTransactions } from "../../data/mockData";
+
 import "./Login.css";
 
 import AuthCard from "../../components/auth/AuthCard/AuthCard";
@@ -18,10 +20,7 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-
   const [errors, setErrors] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -30,14 +29,10 @@ export default function Login() {
   e.preventDefault();
 
   const newErrors = {
-    name: "",
     email: "",
     password: "",
   };
 
-  if (!name.trim()) {
-    newErrors.name = "Name is required";
-  }
 
   if (!email.trim()) {
     newErrors.email = "Email is required";
@@ -49,11 +44,44 @@ export default function Login() {
 
   setErrors(newErrors);
 
-  if (!newErrors.name && !newErrors.email && !newErrors.password) {
-    // save user display name so dashboard shows the entered name
+  if (!newErrors.email && !newErrors.password) {
+    // Ensure login loads or creates the user record but does NOT clear existing per-user data
     try {
-      localStorage.setItem("ps_user", JSON.stringify({ name: name || email.split("@")[0], email }));
-    } catch {}
+      const stored = localStorage.getItem("ps_user");
+      let userObj: { name: string; email: string } | null = null;
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          if (parsed && parsed.email === email) userObj = parsed;
+        } catch {
+          /* ignore malformed ps_user */
+        }
+      }
+
+      if (!userObj) {
+        const nameFromEmail = email.split("@")[0] || "";
+        userObj = { name: nameFromEmail, email };
+      }
+
+      localStorage.setItem("ps_user", JSON.stringify(userObj));
+
+      // If this user has no per-user accounts/transactions, seed with app mock data on login
+      try {
+        const accountsKey = `ps_accounts_${email || "guest"}`;
+        const txKey = `ps_transactions_${email || "guest"}`;
+        if (!localStorage.getItem(accountsKey)) {
+          localStorage.setItem(accountsKey, JSON.stringify(mockAccounts || []));
+        }
+        if (!localStorage.getItem(txKey)) {
+          localStorage.setItem(txKey, JSON.stringify(mockTransactions || []));
+        }
+      } catch {
+        /* ignore storage errors */
+      }
+    } catch {
+      /* ignore storage errors */
+    }
+
     navigate("/dashboard");
   }
 };
@@ -80,15 +108,7 @@ export default function Login() {
           error={errors.email}
         />
 
-        <Input
-          label="Name"
-          type="text"
-          placeholder="Enter display name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          error={errors.name}
-        />
+        
 
         <PasswordInput
           label="Password"
