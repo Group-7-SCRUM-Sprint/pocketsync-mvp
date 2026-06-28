@@ -8,6 +8,17 @@ import { accounts, transactions, currentUser } from "../../data/mockData";
 import type { Account } from "../../types";
 import "./Dashboard.css";
 
+import brandLogo from "../../assets/logo.svg";
+
+
+import gtbank from "../../assets/banks/GTBank.png";
+import access from "../../assets/banks/Access.png";
+import fcmb from "../../assets/banks/FCMB.png";
+import firstbank from "../../assets/banks/FirstBank.png";
+import uba from "../../assets/banks/UBA.png";
+import kuda from "../../assets/banks/Kuda.png";
+import providus from "../../assets/banks/Providus.png";
+
 const BellIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
     <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -31,6 +42,16 @@ const PlusIcon = () => (
     <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
   </svg>
 );
+
+const bankLogos: Record<string, string> = {
+  "GTBank": gtbank,
+  "Access Bank": access,
+  "Fcmb": fcmb,
+  "First Bank": firstbank,
+  "UBA": uba,
+  "Kuda": kuda,
+  "Providus": providus,
+};
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -189,9 +210,10 @@ const Dashboard: React.FC = () => {
       id: String(allTransactions.length + 1),
       description: `Transfer to ${recipientName || transferAccountNumber} (${transferTargetBank})`,
       bank: sourceAcc.bankName,
+      logo: sourceAcc.logo,
       date: "Today",
       amount: -amountNum,
-      type: "transfer" as const
+      type: "transfer" as const,
     };
     
     setAllTransactions(prev => [newTx, ...prev]);
@@ -256,29 +278,17 @@ const Dashboard: React.FC = () => {
       return;
     }
     
-    const bankDetailsMap: Record<string, { color: string; prefix: string; textColor?: string }> = {
-      "GT Bank": { color: "#E85D04", prefix: "GTBank", textColor: "#fff" },
-      "Access Bank": { color: "#E8B923", prefix: "access", textColor: "#fff" },
-      "Zenith Bank": { color: "#E61C24", prefix: "Zenith", textColor: "#fff" },
-      "First Bank": { color: "#0A2540", prefix: "First", textColor: "#fff" },
-      "UBA": { color: "#D11A2A", prefix: "UBA", textColor: "#fff" },
-      "OPay": { color: "#4CAF50", prefix: "OPay", textColor: "#fff" },
-      "Kuda": { color: "#40166F", prefix: "Kuda", textColor: "#fff" },
-      "Moniepoint": { color: "#003399", prefix: "Monie", textColor: "#fff" }
-    };
+    const bankLogo = bankLogos[selectedBankName];
     
-    const details = bankDetailsMap[selectedBankName] || { color: "#5B5FC7", prefix: "Bank", textColor: "#fff" };
     const randomBalance = Math.floor(Math.random() * 450000) + 50000;
     const randomLastFour = Math.floor(Math.random() * 9000) + 1000;
     
     const newAccount: Account = {
       id: String(allAccounts.length + 1),
       bankName: selectedBankName,
+      logo: bankLogo,
       lastFour: String(randomLastFour),
       availableBalance: randomBalance,
-      logoColor: details.color,
-      logoText: details.prefix,
-      logoTextColor: details.textColor
     };
     
     setAllAccounts(prev => [...prev, newAccount]);
@@ -287,9 +297,10 @@ const Dashboard: React.FC = () => {
       id: String(allTransactions.length + 1),
       description: "Account Linked Balance Sync",
       bank: selectedBankName,
+      logo: newAccount.logo,
       date: "Today",
       amount: randomBalance,
-      type: "income" as const
+      type: "income" as const,
     };
     setAllTransactions(prev => [newTx, ...prev]);
     
@@ -488,9 +499,15 @@ const Dashboard: React.FC = () => {
         <div className="accounts-detailed-list">
           {filteredAccounts.map((account) => (
             <div key={account.id} className="account-row-card">
-              <div className="account-row-card__logo" style={{ background: account.logoColor }}>
-                <span style={{ color: account.logoTextColor || "#fff", fontSize: "10px", fontWeight: 800 }}>{account.logoText}</span>
-              </div>
+              <div className="account-row-card__logo">
+
+            <img
+              src={account.logo}
+              alt={account.bankName}
+              className="bank-logo"
+            />
+          </div>
+
               <div className="account-row-card__info">
                 <h3 className="account-row-card__bank">{account.bankName}</h3>
                 <p className="account-row-card__number">•••• {account.lastFour} • Savings</p>
@@ -818,13 +835,11 @@ const Dashboard: React.FC = () => {
         {/* Mobile Header */}
         <div className="mobile-header">
           <div className="mobile-header__logo">
-            <div className="logo-icon">
-              <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-                <circle cx="11" cy="11" r="11" fill="#5B5FC7" />
-                <path d="M7 11.5l3 3 5-5.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <span className="mobile-header__logo-name">pocketsync</span>
+            <img
+              src={brandLogo}
+              alt="PocketSync"
+              className="mobile-brand-logo"
+            />
           </div>
           <div className="mobile-header__actions">
             <button className="mobile-header__btn" onClick={() => handleAction("Notifications")} aria-label="Notifications">

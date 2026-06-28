@@ -28,7 +28,7 @@
 
 .footer__description {
     color: #6B7280;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
     font-size: 15px;
     line-height: 1.7;
 }
@@ -48,7 +48,7 @@
 
     color: #111827;
 
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 700;
 
@@ -62,7 +62,7 @@
 
     text-decoration: none;
 
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
 
     transition: .25s;
 }

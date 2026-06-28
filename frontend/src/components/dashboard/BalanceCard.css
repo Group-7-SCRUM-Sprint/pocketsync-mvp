@@ -1,5 +1,5 @@
 .balance-card {
-  background: #5B5FC7;
+  background: var(--color-primary);
   border-radius: 18px;
   padding: 24px 28px 20px;
   color: #fff;
@@ -16,7 +16,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
   pointer-events: none;
 }
 
@@ -29,7 +29,7 @@
 
 .balance-card__label {
   font-size: 13px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
   flex: 1;
 }
@@ -38,13 +38,15 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   padding: 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 6px;
-  transition: color 0.15s;
-  margin-right: 32px;
+  transition: color 0.2s;
+  margin-right: 28px;
+  flex-shrink: 0;
 }
 
 .balance-card__toggle:hover {
@@ -54,8 +56,8 @@
 .balance-card__stat {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 110px;
+  justify-content: center;
+  min-width: 120px;
 }
 
 .balance-card__stat + .balance-card__stat {
@@ -64,7 +66,8 @@
 
 .balance-card__stat-label {
   font-size: 11px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 4px;
 }
 
 .balance-card__stat-value {
@@ -76,7 +79,7 @@
 }
 
 .balance-card__stat-value.positive {
-  color: #b3f5c8;
+  color: #b9ffd2;
 }
 
 .balance-card__stat-value.accounts {
@@ -84,61 +87,137 @@
 }
 
 .balance-card__amount {
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 800;
-  letter-spacing: -1px;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
   margin-bottom: 14px;
-  line-height: 1;
 }
 
 .balance-card__footer {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-size: 11.5px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-@media (max-width: 768px) {
+/* ----------------------------- */
+/* Tablet */
+/* ----------------------------- */
+
+@media (max-width: 1024px) {
+
   .balance-card {
-    padding: 20px 22px 18px;
-    margin-bottom: 24px;
-  }
-
-  .balance-card__header {
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-
-  .balance-card__label {
-    width: calc(100% - 36px);
-    flex: 0 0 auto;
-    font-size: 12px;
-  }
-
-  .balance-card__toggle {
-    width: 36px;
-    flex: 0 0 auto;
-    margin-right: 0;
-    justify-content: flex-end;
-  }
-
-  .balance-card__stat {
-    flex: 1 1 0%;
-    min-width: 0;
-    margin-top: 14px;
-  }
-
-  .balance-card__stat + .balance-card__stat {
-    margin-left: 16px;
+    padding: 24px;
   }
 
   .balance-card__amount {
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-size: 36px;
+  }
+
+  .balance-card__stat {
+    min-width: 100px;
+  }
+
+}
+
+/* ----------------------------- */
+/* Mobile */
+/* ----------------------------- */
+
+@media (max-width: 767px) {
+
+  .balance-card {
+    padding: 20px 18px;
+  }
+
+  .balance-card::before {
+    width: 130px;
+    height: 130px;
+    top: -35px;
+    right: -35px;
+  }
+
+  .balance-card__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 18px;
+    column-gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .balance-card__label {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 13px;
+  }
+
+  .balance-card__toggle {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    justify-self: end;
+  }
+
+  .balance-card__stat {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .balance-card__stat:first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .balance-card__stat:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    text-align: right;
+  }
+
+  .balance-card__stat + .balance-card__stat {
+    margin-left: 0;
+  }
+
+  .balance-card__stat-label {
+    font-size: 11px;
+  }
+
+  .balance-card__stat-value {
+    font-size: 15px;
+  }
+
+  .balance-card__amount {
+    font-size: clamp(2rem, 7vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    word-break: break-word;
   }
 
   .balance-card__footer {
     font-size: 11px;
   }
+
+}
+
+/* ----------------------------- */
+/* Small phones */
+/* ----------------------------- */
+
+@media (max-width: 420px) {
+
+  .balance-card {
+    padding: 18px 16px;
+  }
+
+  .balance-card__amount {
+    font-size: 1.85rem;
+  }
+
+  .balance-card__stat-value {
+    font-size: 14px;
+  }
+
 }

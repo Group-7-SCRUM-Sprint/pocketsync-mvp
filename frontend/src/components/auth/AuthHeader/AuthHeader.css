@@ -14,7 +14,7 @@
 }
 
 .auth-header__title {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
     font-size: 28px;
     font-weight: 700;
     color: #111827;

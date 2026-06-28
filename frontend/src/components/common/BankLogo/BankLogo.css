@@ -1,0 +1,19 @@
+.bank-logo {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bank-logo__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}

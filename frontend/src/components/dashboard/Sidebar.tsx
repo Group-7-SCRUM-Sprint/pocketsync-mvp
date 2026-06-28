@@ -2,6 +2,8 @@
 import type { User } from "../../types";
 import "./Sidebar.css";
 
+import brandLogo from "../../assets/logo.svg";
+
 interface SidebarProps {
   user: User;
   activePage: string;
@@ -48,8 +50,8 @@ const HelpIcon = () => (
 
 const GearIcon = () => (
   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-    <circle cx="11" cy="11" r="3" stroke="#5B5FC7" strokeWidth="1.5" />
-    <path d="M11 2v2M11 18v2M2 11h2M18 11h2M4.22 4.22l1.41 1.41M16.37 16.37l1.41 1.41M4.22 17.78l1.41-1.41M16.37 5.63l1.41-1.41" stroke="#5B5FC7" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="11" cy="11" r="3" stroke="#4E61F6" strokeWidth="1.5" />
+    <path d="M11 2v2M11 18v2M2 11h2M18 11h2M4.22 4.22l1.41 1.41M16.37 16.37l1.41 1.41M4.22 17.78l1.41-1.41M16.37 5.63l1.41-1.41" stroke="#4E61F6" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
@@ -70,16 +72,11 @@ const Sidebar: React.FC<SidebarProps> = ({ user, activePage, onNavigate }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        <div className="logo-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <circle cx="11" cy="11" r="11" fill="#5B5FC7" />
-            <path d="M7 11.5l3 3 5-5.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-        <div>
-          <span className="logo-name">pocketsync</span>
-          <p className="logo-subtitle">Personal Dashboard</p>
-        </div>
+        <img
+          src={brandLogo}
+          alt="PocketSync"
+          className="sidebar-brand-logo"
+        />
       </div>
 
       <nav className="sidebar-nav">

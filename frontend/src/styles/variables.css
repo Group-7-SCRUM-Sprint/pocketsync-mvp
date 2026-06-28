@@ -1,17 +1,113 @@
 :root {
-    --font-family: "DM Sans", sans-serif;
+  /* =========================
+     Typography
+  ========================== */
 
-    --color-primary: #3454F5;
-    --color-text: #111827;
-    --color-text-secondary: #6B7280;
+  --font-family: "Inter", sans-serif;
 
-    --radius-md: 12px;
-    --radius-lg: 16px;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+  --fs-2xl: 40px;
 
-    --space-1: 8px;
-    --space-2: 16px;
-    --space-3: 24px;
-    --space-4: 32px;
-    --space-5: 48px;
-    --space-6: 80px;
+  /* =========================
+     Brand
+  ========================== */
+
+  --color-primary: #4E61F6;
+  --color-primary-hover: #3F52F2;
+  --color-primary-active: #3346DE;
+  --color-primary-light: #EEF1FF;
+
+  --color-primary-50: #EEF1FF;
+  --color-primary-100: #DDE3FF;
+  --color-primary-200: #C4CEFF;
+  --color-primary-300: #A2AEFF;
+  --color-primary-400: #7D88FF;
+  --color-primary-500: #4E61F6;
+  --color-primary-600: #3F52F2;
+  --color-primary-700: #3346DE;
+
+
+  /* =========================
+     Semantic
+  ========================== */
+
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+
+  /* =========================
+     Base Colors
+  ========================== */
+
+  --color-white: #FFFFFF;
+  --color-black: #111827;
+
+  /* =========================
+     Gray Scale
+  ========================== */
+
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+
+  /* =========================
+     Text
+  ========================== */
+
+  --color-text: var(--color-black);
+  --color-text-secondary: var(--gray-500);
+
+  /* =========================
+     Borders
+  ========================== */
+
+  --color-border: var(--gray-200);
+
+  /* =========================
+     Radius
+  ========================== */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* =========================
+     Spacing
+  ========================== */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* =========================
+     Shadows
+  ========================== */
+
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.05);
+
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.08);
+
+  --shadow-lg: 0 20px 40px rgba(17, 24, 39, 0.12);
+
+  /* =========================
+     Animation
+  ========================== */
+
+  --transition: 0.25s ease;
 }

@@ -1,13 +1,7 @@
-body {
-  font-family: var(--font-family);
-  font-size: var(--fs-md);
-  line-height: 1.5;
-  color: var(--black);
-}
-
 h1 {
   font-size: var(--fs-2xl);
   font-weight: 700;
+  line-height: 1.1;
 }
 
 h2 {
@@ -15,6 +9,12 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
 p {
-  color: var(--gray-700);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-md);
 }
