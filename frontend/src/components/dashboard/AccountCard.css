@@ -11,12 +11,12 @@
 }
 
 .account-card:hover {
-  border-color: #5B5FC7;
+  border-color:var(--color-primary);
   box-shadow: 0 4px 16px rgba(91,95,199,0.1);
 }
 
 .account-card:focus {
-  outline: 2px solid #5B5FC7;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .account-card--link:hover {
-  border-color: #5B5FC7;
+  border-color: var(--color-primary);
   background: #f0f0ff;
 }
 
@@ -104,5 +104,11 @@
   margin: 0;
   font-size: 13px;
   font-weight: 600;
-  color: #5B5FC7;
+  color: var(--color-primary);
+}
+
+@media (max-width: 767px) {
+    .accounts-grid {
+        grid-template-columns: 1fr;
+    }
 }

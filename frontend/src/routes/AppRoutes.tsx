@@ -8,7 +8,7 @@ import Landing from "../pages/landing/Landing";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import RegistrationSuccess from "../pages/auth/RegistrationSuccess";
-import Dashboard from "../pages/dashboard/Dashboard";
+import Dashboard from "../components/dashboard/Dashboard";
 import LinkAccount from "../pages/link-account/LinkAccount";
 import NotFound from "../pages/NotFound";
 

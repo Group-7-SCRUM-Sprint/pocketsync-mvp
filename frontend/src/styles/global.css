@@ -1,24 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    background: var(--gray-50);
-    color: #111827;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  background: var(--gray-50);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button,
 input,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 button {
@@ -30,6 +38,6 @@ button:disabled {
 }
 
 ::selection {
-  background: var(--primary);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-white);
 }

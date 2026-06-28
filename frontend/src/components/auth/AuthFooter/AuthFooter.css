@@ -5,7 +5,7 @@
 
 .auth-footer p {
     color: #6B7280;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
 }
 
