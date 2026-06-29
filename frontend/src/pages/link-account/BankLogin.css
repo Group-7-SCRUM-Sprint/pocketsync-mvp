@@ -54,7 +54,7 @@
   margin-bottom: 6px;
 }
 
-.bl-input {
+.bankLogin-input {
   width: 100%;
   padding: 12px 14px;
   border: 1px solid #e5e7eb;
@@ -65,21 +65,21 @@
   font-family: var(--font-family);
 }
 
-.bl-input:focus {
+.bankLogin-input:focus {
   outline: none;
   border-color: var(--color-primary);
 }
 
-.bl-input-wrapper {
+.bankLogin-input-wrapper {
   position: relative;
   margin-bottom: var(--space-2);
 }
 
-.bl-input-wrapper .bl-input {
+.bankLogin-input-wrapper .bankLogin-input {
   margin-bottom: 0;
 }
 
-.bl-eye {
+.bankLogin-eye {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -90,7 +90,7 @@
   font-size: 16px;
 }
 
-.bl-security {
+.bankLogin-security {
   display: flex;
   gap: var(--space-1);
   background-color: #f0fdf4;
@@ -100,24 +100,24 @@
   margin-bottom: var(--space-3);
 }
 
-.bl-security-title {
+.bankLogin-security-title {
   font-weight: 600;
   font-size: 14px;
   margin: 0 0 4px 0;
 }
 
-.bl-security-text {
+.bankLogin-security-text {
   font-size: 12px;
   color: var(--color-text-secondary);
   margin: 0;
 }
 
-.bl-buttons {
+.bankLogin-buttons {
   display: flex;
   gap: var(--space-2);
 }
 
-.bl-cancel {
+.bankLogin-cancel {
   flex: 1;
   padding: 14px;
   background: none;
@@ -129,7 +129,7 @@
   font-family: var(--font-family);
 }
 
-.bl-continue {
+.bankLogin-continue {
   flex: 1;
   padding: 14px;
   background-color: var(--color-primary);

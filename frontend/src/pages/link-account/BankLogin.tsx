@@ -39,30 +39,36 @@ export default function BankLogin() {
         <img src={bar} alt="progress bar" />
     </div>
 
+    {bankLogo && (
+  <div className="bank-login__bank-icon">
+    <img src={bankLogo} alt={bankName} />
+  </div>
+    )}
+
     <h1 className="banklogin-title">Add {bankName}</h1>
     <p className="banklogin-subtitle">Search for your bank or choose from the list</p>
 
 
     <label className="banklogin-label">USERNAME</label>
-    <input className="bl-input" type="text" name="username" placeholder="Enter Username" value={formData.username} onChange={handleChange} />
+    <input className="bankLogin-input" type="text" name="username" placeholder="Enter Username" value={formData.username} onChange={handleChange} />
 
     <label className="banklogin-label">PASSWORD</label>
-    <div className="bl-input-wrapper">
-      <input className="bl-input" type={showPassword ? "text" : "password"} name="password" placeholder="Enter your account password" value={formData.password} onChange={handleChange} />
-      <button className="bl-eye" onClick={() => setShowPassword(!showPassword)}>
-        {showPassword ? "🙈" : "👁️"}
+    <div className="bankLogin-input-wrapper">
+      <input className="bankLogin-input" type={showPassword ? "text" : "password"} name="password" placeholder="Enter your account password" value={formData.password} onChange={handleChange} />
+      <button className="bankLogin-eye" onClick={() => setShowPassword(!showPassword)}>
+        {showPassword ? "Hide" : "Show"}
       </button>
     </div>
 
     <label className="banklogin-label">BVN</label>
-    <div className="bl-input-wrapper">
-      <input className="bl-input" type={showBvn ? "text" : "password"} name="bvn" placeholder="Enter your 11 digit pin" value={formData.bvn} onChange={handleChange} />
-      <button className="bl-eye" onClick={() => setShowBvn(!showBvn)}>
-        {showBvn ? "🙈" : "👁️"}
+    <div className="bankLogin-input-wrapper">
+      <input className="bankLogin-input" type={showBvn ? "text" : "password"} name="bvn" placeholder="Enter your 11 digit pin" value={formData.bvn} onChange={handleChange} />
+      <button className="bankLogin-eye" onClick={() => setShowBvn(!showBvn)}>
+        {showBvn ? "Hide" : "Show"}
       </button>
     </div>
 
-    <div className="bl-security">
+    <div className="bankLogin-security">
             <img src={shieldIcon} alt="secure" />
             <div>
               <p className="security-title">Your Data is Secure</p>
@@ -70,9 +76,9 @@ export default function BankLogin() {
             </div>
     </div>
 
-        <div className="bl-buttons">
-             <button className="bl-cancel" onClick={() => navigate(-1)}>Cancel</button>
-             <button className="bl-continue" onClick={handleContinue}>Continue</button>
+        <div className="bankLogin-buttons">
+             <button className="bankLogin-cancel" onClick={() => navigate(-1)}>Cancel</button>
+             <button className="bankLogin-continue" onClick={handleContinue}>Continue</button>
          </div>
 
   </div>

@@ -2,13 +2,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import bar from "../../assets/icons/progressBar.png";
 import shieldIcon from "../../assets/icons/secure-lock.png";
+import bank from "../../assets/icons/rupee.png";
 import "./BankPermission.css"
 
 export default function BankPermissions() {
   const location = useLocation();
   const navigate = useNavigate();
   const bankName = location.state?.bankName || "Your Bank";
-
+  const bankLogo = location.state?.bankLogo;
   const handleAllow = () => {
     
     console.log("Access allowed for:", bankName);
@@ -26,27 +27,32 @@ export default function BankPermissions() {
         <img src={bar} alt="progress bar" />
     </div>
 
+  <div className="bank-permissions__bank-icon">
+    <img src={bankLogo} alt={bankName} />  
+  </div>
+
+
       <p className="permissions-title">
         Pocketsync would like to access your bank details
       </p>
 
       <div className="permissions-list">
         <div className="permissions-item">
-          <span>🏦</span>
+          <span><img src= {bank} alt="bankicon" /></span>
           <div>
             <p className="permissions-item-title">Account balances</p>
             <p className="permissions-item-sub">View your account balances</p>
           </div>
         </div>
         <div className="permissions-item">
-          <span>📋</span>
+          <span><img src= {bank} alt="bankicon" /></span>
           <div>
             <p className="permissions-item-title">Transaction History</p>
             <p className="permissions-item-sub">View recent transactions</p>
           </div>
         </div>
         <div className="permissions-item">
-          <span>👤</span>
+          <span><img src= {bank} alt="bankicon" /></span>
           <div>
             <p className="permissions-item-title">Account Identity</p>
             <p className="permissions-item-sub">Verify your account identity</p>
