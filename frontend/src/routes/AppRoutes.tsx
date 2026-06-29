@@ -10,6 +10,8 @@ import Register from "../pages/auth/Register";
 import RegistrationSuccess from "../pages/auth/RegistrationSuccess";
 import Dashboard from "../components/dashboard/Dashboard";
 import LinkAccount from "../pages/link-account/LinkAccount";
+import BankLogin from "../pages/link-account/BankLogin";
+import BankPermissions from "../pages/link-account/BankPermissions";
 import NotFound from "../pages/NotFound";
 
 export default function AppRoutes() {
@@ -31,6 +33,8 @@ export default function AppRoutes() {
       <Route element={<ProtectedLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/accounts/link" element={<LinkAccount />} />
+        <Route path="/accounts/Login" element={<BankLogin />} />
+        <Route path="/accounts/permissions" element={<BankPermissions />} />
       </Route>
 
       {/* 404 */}
