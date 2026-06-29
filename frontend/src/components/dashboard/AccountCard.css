@@ -3,6 +3,7 @@
   border: 1.5px solid #ebebf5;
   border-radius: 14px;
   padding: 16px;
+  box-sizing: border-box;
   cursor: pointer;
   transition: border-color 0.15s, box-shadow 0.15s;
   display: flex;
@@ -121,5 +122,6 @@
     .account-card__balance-row {
         flex-wrap: wrap;
         gap: 12px;
+        min-width: 0;
     }
 }
