@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import shieldIcon from "../../assets/icons/secure-lock.png";
 import pagaLogo from "../../assets/icons/Paga.png";
 import wemaLogo from "../../assets/icons/Wema.png";
@@ -20,6 +21,10 @@ const ALL_BANKS = [
 ];
 export default function LinkAccount() {
   const [search, setSearch]= useState("");
+  const navigate = useNavigate();
+  const handleBankSelect = (bankName: string, bankLogo:string) => {
+  navigate("/accounts/Login", { state: { bankName, bankLogo} });
+};
 
   /* filters banks when the user searches */
   const filteredBanks = ALL_BANKS.filter((bank) => bank.name.toLowerCase().includes(search.toLowerCase())
@@ -45,7 +50,7 @@ export default function LinkAccount() {
       <p className="li-banks-labels">POPULAR BANKS</p>
       <div className="li-banks-grid">
           {filteredBanks.map((bank) => (
-          <div key={bank.name} className="bank-card">
+          <div key={bank.name} className="bank-card" onClick={() => handleBankSelect(bank.name, bank.logo)}>
             <img src={bank.logo} alt={bank.name}/>
 
             <div style={{flex:1}}>
